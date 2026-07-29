@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_buttom.dart';
 import 'package:notes_app/widgets/custom_textfield.dart';
 
@@ -10,9 +11,10 @@ class AddNoteBottomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if (state is AddNoteFailure) {
@@ -24,7 +26,9 @@ class AddNoteBottomsheet extends StatelessWidget {
           builder: (context, state) {
             return ModalProgressHUD(
               inAsyncCall: state is AddNoteLoading ? true : false,
-              child: const AddNoteForm(),
+              child: SingleChildScrollView(
+                child: const AddNoteForm(),
+              ),
             );
           },
         ),
@@ -71,6 +75,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
             ontap: () {
               if (formstate.currentState!.validate()) {
                 formstate.currentState!.save();
+                NoteModel noteModel = NoteModel(
+                  title: title!,
+                  subTitle: suptitle!,
+                  color: Colors.blue.value,
+                  date: DateTime.now().toString(),
+                );
+                BlocProvider.of<AddNoteCubit>(
+                  context,
+                ).addNote(noteModel);
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
