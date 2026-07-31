@@ -3,13 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_appbar.dart';
-import 'package:notes_app/widgets/custom_buttom.dart';
 import 'package:notes_app/widgets/custom_textfield.dart';
 
 class EditNoteView extends StatefulWidget {
-  EditNoteView({super.key, required this.note});
+  const EditNoteView({super.key, required this.note});
 
-  NoteModel note;
+  final NoteModel note;
 
   @override
   State<EditNoteView> createState() => _EditNoteViewState();
