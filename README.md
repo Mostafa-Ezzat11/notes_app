@@ -97,20 +97,6 @@ The application includes several features designed to provide a simple and intui
 
 ---
 
-# 📸 Screenshots
-
-Example:
-
-```text
-assets/screenshots/
-├── HomePage.png
-├── AddNote.png
-├── ColorSelection.png
-├── EditNote.png
-└── DeleteConfirmation.png
-```
-
----
 
 # 🚀 Getting Started
 
