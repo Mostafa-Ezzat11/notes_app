@@ -1,17 +1,57 @@
-# notes_app
+# 📝 Notes App
 
-A new Flutter project.
+A clean and simple **Flutter Notes Application** built with **Dart**, **Hive**, and **Cubit**.
 
-## Getting Started
+The application provides an offline note-taking experience with local data persistence, customizable note colors, and a structured and maintainable codebase.
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📝 Create new notes
+- ✏️ Edit existing notes
+- 🗑️ Delete notes
+- 🎨 Choose a custom color for each note
+- 🔄 Change the note color while editing
+- 📌 Edit the main title and subtitle/content of a note
+- 💾 Store notes locally using **Hive**
+- 📱 Offline data persistence
+- ⚡ State management using **Cubit**
+- ⚠️ Delete confirmation dialog to prevent accidental deletion
+- 🔔 SnackBar feedback after creating notes and performing user actions
+- 🧩 Reusable Flutter widgets
+- 📂 Organized and modular project structure
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🛠️ Technologies & Tools
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter**
+- **Dart**
+- **Hive** – Local data storage
+- **Cubit** – State management
+- **Material Design**
+- **Git & GitHub**
+
+## 🏗️ Project Structure
+
+The project is organized into separate files and components to keep responsibilities clear and make the code easier to maintain and extend.
+
+```text
+lib/
+│
+├── cubits/
+│   └── ...
+│
+├── models/
+│   └── ...
+│
+├── screens/
+│   └── ...
+│
+├── widgets/
+│   └── ...
+│
+├── helpers/
+│   └── ...
+│
+├── constants/
+│   └── ...
+│
+└── main.dart
